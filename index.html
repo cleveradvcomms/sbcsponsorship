@@ -1,0 +1,680 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Análise de Patrocínio SBC - 2025 & 2026</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@3.7.1/dist/chart.min.js"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Barlow:wght@700&family=Figtree:wght@400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Barlow:wght@700&family=Figtree:wght@400;500;700&display=swap');
+        
+        body {
+            font-family: 'Figtree', sans-serif;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+        }
+        h1, h2, h3, h4, h5, h6, .nav-link, .tab-button, .chart-legend {
+            font-family: 'Barlow', sans-serif;
+            font-weight: 700;
+            text-transform: uppercase;
+        }
+        html {
+            scroll-behavior: smooth;
+        }
+        
+        .chart-container {
+            position: relative;
+            width: 100%;
+            max-width: 900px;
+            margin-left: auto;
+            margin-right: auto;
+            height: 350px;
+            max-height: 400px;
+        }
+        @media (min-width: 768px) {
+            .chart-container {
+                height: 400px;
+                max-height: 500px;
+            }
+        }
+        .chart-container-sm {
+            position: relative;
+            width: 100%;
+            max-width: 700px;
+            margin-left: auto;
+            margin-right: auto;
+            height: 300px;
+            max-height: 350px;
+        }
+        
+        .tab-button.active {
+            background-color: #1e293b;
+            color: #ffffff;
+        }
+        
+    </style>
+</head>
+<body class="bg-slate-50 text-slate-900 leading-relaxed">
+
+    <header class="bg-white p-6 flex justify-center items-center shadow-md" style="padding: 1.5em;">
+        <svg id="Camada_2" data-name="Camada 2" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 837.7 245.66" class="h-[70px]">
+          <defs>
+            <style>
+              .cls-1 { fill: none; }
+              .cls-2 { clip-path: url(#clippath-1); }
+              .cls-3 { fill: url(#Gradiente_sem_nome_10); }
+              .cls-4 { fill: #24282a; }
+              .cls-5 { clip-path: url(#clippath); }
+            </style>
+            <clipPath id="clippath">
+              <rect class="cls-1" x="546.28" y="39.03" width="110.43" height="113"/>
+            </clipPath>
+            <clipPath id="clippath-1">
+              <rect class="cls-1" width="240.06" height="245.66"/>
+            </clipPath>
+            <linearGradient id="Gradiente_sem_nome_10" data-name="Gradiente sem nome 10" x1="5622.93" y1="5321.6" x2="5624.11" y2="5322.12" gradientTransform="translate(-1349792.92 1307463.94) scale(240.05 -245.66)" gradientUnits="userSpaceOnUse">
+              <stop offset="0" stop-color="#1b1f59"/>
+              <stop offset="1" stop-color="#0fc"/>
+            </linearGradient>
+          </defs>
+          <g id="Camada_1" data-name="Camada 1">
+            <g id="Grupo_149" data-name="Grupo 149">
+              <g id="Grupo_42-2" data-name="Grupo 42-2">
+                <path id="Caminho_389-2" data-name="Caminho 389-2" class="cls-4" d="M452.05,129.69v18.74c0,1.99-1.61,3.6-3.6,3.6h-67.98c-1.99,0-3.6-1.61-3.6-3.6h0V42.63c0-1.99,1.61-3.6,3.6-3.6h20.9c1.99,0,3.6,1.61,3.6,3.6h0v83.46h43.47c1.99,0,3.6,1.61,3.61,3.59h0Z"/>
+                <path id="Caminho_392-2" data-name="Caminho 392-2" class="cls-4" d="M821.22,116.37l-2.89-5.46c17.91-12.4,22.38-36.97,9.99-54.88-7.37-10.65-19.49-17-32.44-17h-41.65c-1.99,0-3.6,1.61-3.6,3.6v105.8c0,1.99,1.61,3.6,3.6,3.6h20.81c2.04,0,3.7-1.66,3.7-3.7v-30.56c0-.77.63-1.4,1.4-1.4h8.8c.52,0,1,.29,1.24.75l.23.43,17.21,32.51c.64,1.22,1.91,1.98,3.29,1.98h23.18c2,0,3.62-1.63,3.62-3.63,0-.59-.15-1.17-.42-1.69l-16.06-30.34ZM805.1,85.93c-2.59,4.22-7.18,6.79-12.13,6.78h-14.24v-28.46h14.9v.02c7.86.37,13.93,7.03,13.56,14.89-.11,2.4-.83,4.73-2.09,6.78h0Z"/>
+                <path id="Caminho_390-2" data-name="Caminho 390-2" class="cls-4" d="M370.4,140.66c.53.99.04,2.22-.67,2.87-26.46,18.91-63.23,12.79-82.14-13.66-18.91-26.46-12.79-63.23,13.66-82.14,20.48-14.64,47.99-14.64,68.47,0,.91.66,1.19,1.88.67,2.88l-10.45,19.73c-.93,1.76-3.11,2.42-4.87,1.49-.2-.1-.38-.23-.55-.36-13.36-10.51-32.71-8.21-43.22,5.15-10.51,13.36-8.21,32.71,5.15,43.22,11.17,8.79,26.91,8.79,38.08,0,1.55-1.24,3.82-.99,5.06.57.14.17.26.36.37.56l10.44,19.73Z"/>
+                <path id="Caminho_388-2" data-name="Caminho 388-2" class="cls-4" d="M487.03,64.97v18.73h37.96c1.99,0,3.6,1.61,3.6,3.6v16.46c0,1.99-1.61,3.6-3.6,3.6h-37.96v18.73h49.15c1.99,0,3.6,1.61,3.6,3.6v18.74c0,1.99-1.61,3.6-3.6,3.6h-73.66c-1.99,0-3.6-1.61-3.6-3.6V42.63c0-1.99,1.61-3.6,3.6-3.6h73.66c1.99,0,3.6,1.61,3.6,3.6v18.65c0,2.04-1.65,3.69-3.69,3.69h-49.06Z"/>
+                <path id="Caminho_391-2" data-name="Caminho 391-2" class="cls-4" d="M691.37,64.97v18.73h37.96c1.99,0,3.6,1.61,3.6,3.6v16.46c0,1.99-1.61,3.6-3.6,3.6h-37.96v18.73h49.15c1.99,0,3.6,1.61,3.6,3.6v18.74c0,1.99-1.61,3.6-3.6,3.6h-73.66c-1.99,0-3.6-1.61-3.6-3.6V42.63c0-1.99,1.61-3.6,3.6-3.6h73.66c1.99,0,3.6,1.61,3.6,3.6v18.65c0,2.04-1.65,3.69-3.69,3.69h-49.06Z"/>
+                <g id="Grupo_29-2" data-name="Grupo 29-2">
+                  <g class="cls-5">
+                    <g id="Grupo_4-3" data-name="Grupo 4-3">
+                      <path id="Caminho_204-3" data-name="Caminho 204-3" class="cls-4" d="M656.55,42.1l-42.22,107.61c-.55,1.4-1.9,2.32-3.41,2.32h-18.86c-1.51,0-2.86-.92-3.41-2.32l-42.22-107.61c-.45-1.15.11-2.46,1.27-2.91.26-.1.54-.16.82-.16h24.31c1.54,0,2.92.96,3.45,2.41l25.21,69.57,15.99-44.09c.27-.74-.12-1.55-.85-1.82-.15-.06-.32-.08-.48-.08h-15.82c-1.24,0-2.25-1-2.25-2.25,0-.26.05-.52.13-.77l7.45-20.56c.53-1.45,1.9-2.41,3.44-2.41h45.35c1.24,0,2.25,1.01,2.25,2.25,0,.28-.05.56-.16.82"/>
+                    </g>
+                  </g>
+                </g>
+              </g>
+              <g id="Grupo_43-2" data-name="Grupo 43-2">
+                <path id="Caminho_393-2" data-name="Caminho 393-2" class="cls-4" d="M310.46,207.36c0,.24-.09.46-.27.62-.22.17-.5.26-.77.24h-6.76c-.33,0-.66-.11-.92-.32-.28-.21-.49-.5-.61-.82l-1.57-4.57h-12.07l-1.55,4.55c-.09.33-.29.62-.57.82-.28.21-.62.33-.98.32h-6.74c-.28.02-.55-.06-.77-.23-.18-.16-.29-.39-.27-.63,0-.19.05-.37.12-.55l12.72-32.27c.14-.34.38-.64.68-.86.27-.2.6-.31.94-.31h5.02c.34,0,.67.12.94.32.29.21.51.51.63.85l12.69,32.29c.07.17.11.36.12.55M297.1,195.31l-3.6-10.55-3.6,10.55h7.2Z"/>
+                <path id="Caminho_394-2" data-name="Caminho 394-2" class="cls-4" d="M338.14,174.64c0-.34.13-.66.37-.89.23-.24.56-.38.89-.37h10.81c3.16-.05,6.28.71,9.06,2.23,2.61,1.44,4.77,3.58,6.23,6.19,1.52,2.76,2.29,5.86,2.24,9.01.05,3.14-.72,6.23-2.24,8.98-1.46,2.6-3.61,4.74-6.23,6.17-2.78,1.51-5.9,2.27-9.06,2.21h-10.81c-.7,0-1.26-.56-1.26-1.26h0v-32.27ZM350.21,199.97c3.23.04,6.21-1.71,7.74-4.55.77-1.42,1.16-3.01,1.14-4.62.02-1.66-.37-3.3-1.14-4.76-1.5-2.87-4.5-4.65-7.74-4.59l-3.43.02v18.5h3.43Z"/>
+                <path id="Caminho_395-2" data-name="Caminho 395-2" class="cls-4" d="M425.13,173.56c.18.15.28.38.26.62,0,.2-.04.39-.12.57l-12.72,32.27c-.13.35-.36.65-.65.87-.27.21-.6.32-.94.32h-5.02c-.35,0-.68-.12-.95-.33-.29-.21-.52-.5-.64-.83l-12.67-32.29c-.07-.17-.11-.36-.12-.55,0-.23.09-.46.26-.61.22-.16.49-.25.76-.23h6.76c.34,0,.67.11.94.32.28.21.48.51.58.85l7.55,21,7.67-21.05c.1-.34.31-.63.6-.83.27-.2.59-.31.93-.31h6.76c.27-.02.54.06.76.21"/>
+                <path id="Caminho_396-2" data-name="Caminho 396-2" class="cls-4" d="M452.9,174.64c-.02-.34.1-.68.33-.93.25-.23.59-.35.93-.33h22.4c.34-.02.68.1.93.33.23.25.35.59.33.93v5.48c.02.34-.1.67-.32.93-.25.24-.59.36-.94.33h-15.12v5.76h11.48c.37-.02.73.1,1.01.35.26.25.39.61.37.97v4.53c.02.35-.12.69-.37.93-.28.24-.64.36-1.01.33h-11.48v5.93h15.12c.47-.03.92.13,1.27.44.32.31.49.74.46,1.18v5.14c.02.34-.11.66-.35.9-.26.23-.6.35-.94.33h-22.85c-.34.02-.67-.09-.93-.32-.23-.25-.36-.58-.33-.92v-32.29Z"/>
+                <path id="Caminho_397-2" data-name="Caminho 397-2" class="cls-4" d="M534.29,207.26c0,.51-.4.92-.9.93-.02,0-.03,0-.05,0h-7.12c-.29.02-.58-.06-.82-.23-.27-.24-.48-.52-.63-.85l-5.1-9.81h-3.55v9.62c.02.34-.11.68-.35.93-.26.23-.61.35-.96.33h-6.1c-.34.02-.67-.1-.92-.33-.23-.25-.34-.59-.32-.93v-32.29c-.01-.34.11-.66.35-.9.23-.24.56-.37.89-.36h12.22c2.26-.04,4.49.47,6.5,1.49,1.85.95,3.38,2.42,4.42,4.23,1.09,1.94,1.64,4.14,1.59,6.36.03,2.04-.46,4.06-1.42,5.86-.92,1.71-2.29,3.13-3.96,4.12l6.1,11.31c.1.16.14.34.14.52M516.12,189.85h4.45c.77.01,1.52-.2,2.18-.6.64-.39,1.16-.95,1.51-1.62.37-.69.56-1.46.55-2.24.01-.76-.18-1.51-.55-2.18-.35-.63-.88-1.15-1.51-1.5-.67-.36-1.42-.55-2.18-.53h-4.45v8.67Z"/>
+                <path id="Caminho_398-2" data-name="Caminho 398-2" class="cls-4" d="M561.13,174.64c-.02-.34.1-.68.33-.93.25-.23.59-.35.93-.33h23.24c.34-.02.68.1.93.33.23.25.35.59.33.93v5.74c.02.35-.1.68-.33.94-.25.24-.58.37-.93.35h-7.31v25.55c.02.35-.1.69-.33.94-.26.23-.6.35-.95.32h-6.1c-.64.06-1.2-.4-1.26-1.04,0-.07,0-.15,0-.22v-25.55h-7.29c-.34.02-.68-.1-.93-.35-.23-.26-.35-.6-.33-.94v-5.74Z"/>
+                <path id="Caminho_399-2" data-name="Caminho 399-2" class="cls-4" d="M623.9,207.24c.07.44-.23.86-.68.93-.07.01-.15.01-.22,0h-6.79c-.46.06-.87-.27-.93-.73,0-.07,0-.14,0-.2v-32.94c-.06-.44.26-.85.7-.9.07,0,.15,0,.22,0h6.79c.44-.06.84.25.9.69,0,.07,0,.14,0,.21v32.94Z"/>
+                <path id="Caminho_400-2" data-name="Caminho 400-2" class="cls-4" d="M652.91,204.31c.01-.3.1-.6.26-.86l2.81-5.05c.2-.41.62-.67,1.07-.67.27.01.54.08.79.19,1.47.68,2.99,1.24,4.55,1.68,1.51.41,3.06.61,4.62.61,1.06.03,2.12-.21,3.06-.7.75-.34,1.24-1.07,1.25-1.89,0-.58-.25-1.13-.7-1.5-.6-.49-1.27-.86-2-1.12-.87-.33-2.09-.73-3.66-1.19-2.07-.58-4.08-1.36-6-2.34-1.43-.74-2.65-1.83-3.54-3.18-.87-1.47-1.29-3.15-1.22-4.86-.05-2.05.57-4.07,1.76-5.74,1.2-1.62,2.82-2.88,4.69-3.63,2.01-.83,4.17-1.25,6.35-1.23,1.47,0,2.94.17,4.37.5,1.37.3,2.71.73,4.01,1.26,1.03.42,2.02.93,2.95,1.52.41.21.68.62.71,1.07-.03.32-.13.63-.31.9l-2.83,5.14c-.17.38-.56.62-.98.62-.37-.02-.73-.13-1.05-.31-1.18-.62-2.41-1.14-3.68-1.56-1.23-.37-2.51-.55-3.8-.54-.91-.02-1.81.2-2.6.64-.64.29-1.07.92-1.1,1.62,0,.7.47,1.3,1.41,1.8,1.45.69,2.97,1.25,4.53,1.65,2.14.6,4.22,1.37,6.24,2.3,1.52.71,2.84,1.79,3.83,3.14,1.03,1.52,1.53,3.33,1.45,5.16.04,2.1-.58,4.15-1.79,5.87-1.23,1.71-2.91,3.04-4.86,3.85-2.15.91-4.46,1.36-6.79,1.33-2.35,0-4.68-.31-6.95-.9-2.2-.56-4.31-1.43-6.26-2.6-.38-.19-.61-.58-.62-1"/>
+                <path id="Caminho_401-2" data-name="Caminho 401-2" class="cls-4" d="M717.37,207.24c.07.44-.23.86-.68.93-.08.01-.15.01-.23,0h-6.79c-.46.06-.87-.27-.93-.73,0-.07,0-.14,0-.2v-32.94c-.06-.44.26-.85.7-.9.07,0,.15,0,.22,0h6.79c.44-.06.84.24.9.68.01.07.01.15,0,.22v32.94Z"/>
+                <path id="Caminho_402-2" data-name="Caminho 402-2" class="cls-4" d="M778.6,173.61c.17.19.26.44.24.69v32.96c.02.26-.07.51-.25.69-.19.17-.43.25-.68.24h-6.48c-.75,0-1.45-.41-1.81-1.07l-13.38-20.36v20.5c.02.25-.07.51-.25.69-.19.17-.43.25-.68.24h-6.79c-.25.01-.49-.07-.68-.24-.18-.18-.27-.44-.25-.69v-32.95c-.02-.25.07-.51.25-.69.19-.17.43-.25.68-.24h7.03c.75.04,1.42.46,1.79,1.12l12.88,19.15v-19.34c-.02-.25.07-.5.24-.69.18-.17.42-.25.67-.24h6.79c.25-.02.5.07.69.24"/>
+                <path id="Caminho_403-2" data-name="Caminho 403-2" class="cls-4" d="M827.49,200.03c.61-.16,1.2-.37,1.76-.66v-6.14c-.01-.34.12-.67.37-.91.24-.23.56-.36.89-.36h5.98c.32,0,.64.13.86.37.23.24.36.56.36.89v11.36c0,.26-.07.51-.19.74-.1.23-.27.42-.48.55-1.63.97-3.4,1.7-5.25,2.14-1.96.55-3.98.85-6.01.88-3.24.03-6.43-.79-9.24-2.4-2.75-1.56-5.04-3.82-6.63-6.55-1.63-2.77-2.47-5.93-2.44-9.15-.04-6.48,3.42-12.47,9.05-15.67,2.81-1.61,6-2.44,9.24-2.41,1.91.02,3.81.34,5.62.94,1.76.51,3.41,1.35,4.86,2.47.33.23.53.62.52,1.02,0,.24-.07.47-.22.67l-3.5,5.26c-.19.32-.53.51-.91.5-.3,0-.59-.1-.81-.31-.78-.65-1.68-1.13-2.64-1.44-.93-.33-1.92-.5-2.91-.51-1.71-.02-3.39.42-4.88,1.26-1.45.82-2.66,2-3.5,3.44-1.71,2.96-1.71,6.61,0,9.57.84,1.44,2.05,2.62,3.5,3.44,1.49.84,3.17,1.28,4.88,1.26.58-.02,1.16-.11,1.72-.27"/>
+              </g>
+              <g id="Grupo_41-2" data-name="Grupo 41-2">
+                <g class="cls-2">
+                  <g id="Grupo_4-4" data-name="Grupo 4-4">
+                    <path id="Caminho_204-4" data-name="Caminho 204-4" class="cls-3" d="M239.71,6.67l-91.78,233.94c-1.2,3.05-4.14,5.05-7.41,5.05h-41c-3.27,0-6.21-2.01-7.41-5.05L.34,6.67C-.64,4.16.59,1.32,3.1.34,3.67.11,4.28,0,4.89,0h52.84c3.35,0,6.34,2.1,7.48,5.25l54.82,151.23,34.75-95.85c.58-1.6-.25-3.37-1.85-3.95-.34-.12-.69-.19-1.05-.18h-34.39c-2.7,0-4.88-2.19-4.88-4.88,0-.57.1-1.13.29-1.66l16.2-44.7c1.14-3.15,4.13-5.25,7.49-5.25h98.59c2.7,0,4.88,2.19,4.88,4.88,0,.61-.11,1.22-.34,1.78"/>
+                  </g>
+                </g>
+              </g>
+            </g>
+          </g>
+        </svg>
+    </header>
+
+    <header class="bg-slate-800 text-white p-4 shadow-md sticky top-0 z-50">
+        <div class="max-w-6xl mx-auto flex flex-nowrap justify-between items-center gap-4">
+            <h1 class="text-base md:text-xl font-bold truncate">Análise de Patrocínio SBC - 2025 & 2026</h1>
+            <nav class="flex gap-1 md:gap-2">
+                <a href="#resumo" class="nav-link text-xs md:text-sm px-2 py-2 rounded-md hover:bg-slate-700">Resumo</a>
+                <a href="#comparativo" class="nav-link text-xs md:text-sm px-2 py-2 rounded-md hover:bg-slate-700">Comparativo</a>
+                <a href="#opcoes" class="nav-link text-xs md:text-sm px-2 py-2 rounded-md hover:bg-slate-700">Opções</a>
+                <a href="#cenarios" class="nav-link text-xs md:text-sm px-2 py-2 rounded-md hover:bg-slate-700">Cenários</a>
+                <a href="#negociacao" class="nav-link text-xs md:text-sm px-2 py-2 rounded-md hover:bg-slate-700">Negociação</a>
+                <a href="#fontes" class="nav-link text-xs md:text-sm px-2 py-2 rounded-md hover:bg-slate-700">Fontes</a>
+            </nav>
+        </div>
+    </header>
+
+    <main class="max-w-6xl mx-auto p-4 md:p-8">
+
+        <section id="resumo" class="mb-12 scroll-mt-24">
+            <h2 class="text-3xl font-bold text-slate-800 mb-4 border-b-2 border-slate-300 pb-2">1. Resumo Executivo</h2>
+            <p class="text-lg text-slate-700 mb-6">A proposta do SBC para 2026 representa uma mudança estratégica e um aumento de custo significativo, especialmente ao adotarmos uma estratégia "booth-less" (sem stands). Esta página analisa os novos custos, destaca os pontos críticos e prepara os argumentos de negociação.</p>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-4 mb-6">
+                <div class="bg-white p-6 rounded-lg shadow-lg border border-slate-200 text-center">
+                    <h3 class="text-sm font-semibold text-slate-500 uppercase">Investimento Total 2025</h3>
+                    <p class="text-3xl font-bold text-slate-800 mt-2">€119,260</p>
+                    <span class="text-xs text-slate-400">(Rio + Americas)</span>
+                </div>
+                <div class="bg-white p-6 rounded-lg shadow-lg border border-red-200 text-center">
+                    <h3 class="text-sm font-semibold text-slate-500 uppercase">Proposta Total 2026</h3>
+                    <p class="text-3xl font-bold text-red-600 mt-2">€142,700</p>
+                    <span class="text-xs text-slate-400">(3 Eventos, "Booth-less")</span>
+                </div>
+                <div class="bg-white p-6 rounded-lg shadow-lg border border-green-200 text-center">
+                    <h3 class="text-sm font-semibold text-slate-500 uppercase">Nosso Alvo 2026</h3>
+                    <p class="text-3xl font-bold text-green-700 mt-2">~€113,700</p>
+                    <span class="text-xs text-slate-400">(3 Eventos, Pós-Negociação)</span>
+                </div>
+            </div>
+
+            <div class="bg-white p-6 rounded-lg shadow-lg border border-slate-200">
+                <h3 class="text-xl font-bold text-slate-800 mb-4">Principais Diferenças</h3>
+                <ul class="list-disc pl-5 space-y-3 text-slate-700">
+                    <li>
+                        <strong class="text-red-600">Americas:</strong> O valor "não-booth" salta de ~€49k para €75k. Isto deve-se à inclusão de um novo item, <strong class="text-blue-600">"Gold Headline Sponsor" (€23,5k)</strong>, e à <strong class="text-red-600">nova cobrança</strong> de uma "Speaker Opportunity" (€5,8k) que era cortesia.
+                    </li>
+                    <li>
+                        <strong class="text-red-600">Rio:</strong> O custo "não-booth" quase duplica, de ~€20k para €39k. A justificação é a mudança do "Affiliate Leaders Stage" (2025) para o <strong class="text-blue-600">"Main Conference Stage"</strong> (2026).
+                    </li>
+                    <li>
+                        <strong class="text-green-700">Recomendação:</strong> A proposta está inflacionada. Temos espaço para negociar agressivamente, focando em remover o "Gold Sponsor" (Americas), reverter a taxa de "Speaker" para cortesia e reduzir o prémio do "Main Stage" (Rio).
+                    </li>
+                </ul>
+            </div>
+        </section>
+
+        <section id="comparativo" class="mb-12 scroll-mt-24">
+            <h2 class="text-3xl font-bold text-slate-800 mb-6 border-b-2 border-slate-300 pb-2">2. Análise Comparativa</h2>
+            
+            <div class="flex flex-wrap gap-2 mb-6">
+                <button class="tab-button active px-4 py-2 text-sm md:text-base font-medium rounded-md bg-white border border-slate-300 shadow-sm hover:bg-slate-100" data-tab="americas">SBC Summit Americas</button>
+                <button class="tab-button px-4 py-2 text-sm md:text-base font-medium rounded-md bg-white border border-slate-300 shadow-sm hover:bg-slate-100" data-tab="rio">SBC Summit Rio</button>
+                <button class="tab-button px-4 py-2 text-sm md:text-base font-medium rounded-md bg-white border border-slate-300 shadow-sm hover:bg-slate-100" data-tab="malta">SBC Summit Malta</button>
+            </div>
+
+            <div id="tab-content-container">
+                <div id="tab-americas" class="tab-content space-y-6">
+                    <div class="chart-container-sm">
+                        <canvas id="americasChart"></canvas>
+                    </div>
+                    <div class="grid grid-cols-1 lg:grid-cols-2 gap-6">
+                        <div class="bg-white p-6 rounded-lg shadow-lg border border-slate-200">
+                            <h3 class="text-xl font-bold">2025 (Acordo Fechado)</h3>
+                            <p class="text-2xl font-semibold text-slate-600 mb-4">€70,760</p>
+                            <ul class="list-disc pl-5 space-y-2 text-slate-700">
+                                <li><strong>6x6m Booth (Premium)</strong> (Custo: €21,975.16)</li>
+                                <li>Stage 3 Sponsor - North America (Custo: €26,370.19)</li>
+                                <li>Affiliate Leaders Stage Sponsor (Custo: €19,777.64)</li>
+                                <li>Panel Participation <span class="text-sm font-medium text-green-700">(Cortesia)</span></li>
+                                <li>Supporting Event Sponsor (Custo: €2,637.02)</li>
+                                <li>8 Sponsor Admissions</li>
+                                <li><strong class="text-slate-500">Valor "Não-Booth": ~€48,785</strong></li>
+                            </ul>
+                        </div>
+                        <div class="bg-white p-6 rounded-lg shadow-lg border border-slate-200">
+                            <h3 class="text-xl font-bold">2026 (Proposta "Main Package")</h3>
+                            <p class="text-2xl font-semibold text-red-600 mb-4">€75,000 <span class="text-sm">(Sem Stand)</span></p>
+                            <ul class="list-disc pl-5 space-y-2 text-slate-700">
+                                <li><strong class="text-blue-600">Gold Headline Sponsor (NOVO ITEM)</strong> (Custo: €23,529.41)
+                                    <ul class="list-circle pl-4 text-sm">
+                                        <li>Branding digital/impresso, adverts, post LinkedIn</li>
+                                    </ul>
+                                </li>
+                                <li>Stage Sponsor - North America (Custo: €23,161.76)</li>
+                                <li>Affiliate Leaders Stage Sponsor (Custo: €19,485.29)</li>
+                                <li><strong class="text-red-600">Speaker Panel Participation (NOVA COBRANÇA)</strong> (Custo: €5,882.35)</li>
+                                <li>Supporting Event Sponsor (Custo: €2,941.18)</li>
+                                <li>8 Sponsor Admissions</li>
+                                <li><strong class="text-red-600">Valor "Não-Booth": €75,000</strong></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <div id="tab-rio" class="tab-content space-y-6 hidden">
+                    <div class="chart-container-sm">
+                        <canvas id="rioChart"></canvas>
+                    </div>
+                    <div class="grid grid-cols-1 lg:grid-cols-2 gap-6">
+                        <div class="bg-white p-6 rounded-lg shadow-lg border border-slate-200">
+                            <h3 class="text-xl font-bold">2025 (Acordo Fechado)</h3>
+                            <p class="text-2xl font-semibold text-slate-600 mb-4">€48,500</p>
+                            <ul class="list-disc pl-5 space-y-2 text-slate-700">
+                                <li><strong>9x6m Booth (54 sqm)</strong> (Custo: €28,078.95)</li>
+                                <li>Stage Sponsor - Affiliate Leaders (Custo: €17,868.42)</li>
+                                <li>Speaker Opportunity <span class="text-sm font-medium text-green-700">(Cortesia)</span></li>
+                                <li>Supporting Event Sponsor (Custo: €2,552.63)</li>
+                                <li><strong>15 Complimentary Sponsor Admissions</strong></li>
+                                <li><strong class="text-slate-500">Valor "Não-Booth": ~€20,421</strong></li>
+                            </ul>
+                        </div>
+                        <div class="bg-white p-6 rounded-lg shadow-lg border border-slate-200">
+                            <h3 class="text-xl font-bold">2026 (Proposta - Pacote 1)</h3>
+                            <p class="text-2xl font-semibold text-red-600 mb-4">€39,000 <span class="text-sm">(Sem Stand)</span></p>
+                            <ul class="list-disc pl-5 space-y-2 text-slate-700">
+                                <li><strong class="text-blue-600">Main Conference Stage Sponsor (NOVO NÍVEL)</strong> (Custo: €36,364.86)
+                                    <ul class="list-circle pl-4 text-sm">
+                                        <li>Patrocínio do Palco Principal (Liderança)</li>
+                                    </ul>
+                                </li>
+                                <li>Supporting Event Sponsor (Custo: €2,635.14)</li>
+                                <li><strong class="text-red-600">8 Complimentary Sponsor Admissions (REDUÇÃO)</strong></li>
+                                <li><strong class="text-red-600">Valor "Não-Booth": €39,000</strong></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <div id="tab-malta" class="tab-content space-y-6 hidden">
+                    <p class="text-lg text-slate-700">Este é um evento novo para nós em 2026. A Opção 2 parece ser a mais equilibrada e custo-efetiva.</p>
+                    <div class="grid grid-cols-1 lg:grid-cols-2 gap-6">
+                        <div class="bg-white p-6 rounded-lg shadow-lg border border-slate-200">
+                            <h3 class="text-xl font-bold">Opção 1 (Proposta)</h3>
+                            <p class="text-2xl font-semibold text-slate-600 mb-4">€40,000</p>
+                            <ul class="list-disc pl-5 space-y-2 text-slate-700">
+                                <li>2x Stage Sponsors</li>
+                                <li>Supporting Sponsor</li>
+                            </ul>
+                        </div>
+                        <div class="bg-white p-6 rounded-lg shadow-lg border border-green-200">
+                            <h3 class="text-xl font-bold">Opção 2 (Recomendada)</h3>
+                            <p class="text-2xl font-semibold text-green-700 mb-4">€28,700</p>
+                            <ul class="list-disc pl-5 space-y-2 text-slate-700">
+                                <li>1x Stage Sponsor</li>
+                                <li>1x Premium Sponsor</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="opcoes" class="mb-12 scroll-mt-24">
+            <h2 class="text-3xl font-bold text-slate-800 mb-6 border-b-2 border-slate-300 pb-2">Opções de Booth / Meeting Room</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                <!-- Americas Card -->
+                <div class="bg-white p-6 rounded-lg shadow-lg border border-slate-200">
+                    <h3 class="text-xl font-bold text-slate-800 mb-4">Americas: Booth Package</h3>
+                    <p class="text-2xl font-semibold text-slate-600 mb-4">€25,000.00</p>
+                    <ul class="list-disc pl-5 space-y-2 text-slate-700">
+                        <li>6x6m Booth (Premium) - Now Separate Cost</li>
+                        <li>Premium located Booth space</li>
+                        <li>Use stand space for scheduled meetings</li>
+                        <li>Distribute promotional material and gifts</li>
+                    </ul>
+                </div>
+                <!-- Rio Card -->
+                <div class="bg-white p-6 rounded-lg shadow-lg border border-slate-200">
+                    <h3 class="text-xl font-bold text-slate-800 mb-4">Rio: Private Meeting Room</h3>
+                    <p class="text-2xl font-semibold text-slate-600 mb-4">€8,000.00</p>
+                    <ul class="list-disc pl-5 space-y-2 text-slate-700">
+                        <li>Private space (approx. 4x4m) on Mezzanine level</li>
+                        <li>Rental during show open hours</li>
+                        <li>Sign with sponsor logo outside</li>
+                        <li>Table with 6 chairs provided</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <section id="cenarios" class="mb-12 scroll-mt-24">
+            <h2 class="text-3xl font-bold text-slate-800 mb-4 border-b-2 border-slate-300 pb-2">3. Cenários Financeiros</h2>
+            <p class="text-lg text-slate-700 mb-6">Este gráfico resume o impacto financeiro. Mostra o custo total de 2025, a proposta de 2026 e o nosso objetivo de negociação recomendado, permitindo ver o "gap" que precisamos de negociar.</p>
+
+            <div class="bg-white p-6 rounded-lg shadow-lg border border-slate-200">
+                <div class="chart-container">
+                    <canvas id="financeiroChart"></canvas>
+                </div>
+
+                <div class="overflow-x-auto mt-6">
+                    <table class="min-w-full divide-y divide-slate-200 text-left">
+                        <thead class="bg-slate-50">
+                            <tr>
+                                <th class="px-4 py-3 text-xs font-semibold text-slate-500 uppercase tracking-wider">Cenário</th>
+                                <th class="px-4 py-3 text-xs font-semibold text-slate-500 uppercase tracking-wider text-right">Americas</th>
+                                <th class="px-4 py-3 text-xs font-semibold text-slate-500 uppercase tracking-wider text-right">Rio</th>
+                                <th class="px-4 py-3 text-xs font-semibold text-slate-500 uppercase tracking-wider text-right">Malta</th>
+                                <th class="px-4 py-3 text-xs font-semibold text-slate-500 uppercase tracking-wider text-right">TOTAL (Rio+Americas)</th>
+                                <th class="px-4 py-3 text-xs font-semibold text-slate-500 uppercase tracking-wider text-right">TOTAL (3 Eventos)</th>
+                            </tr>
+                        </thead>
+                        <tbody class="bg-white divide-y divide-slate-200">
+                            <tr>
+                                <td class="px-4 py-3 whitespace-nowrap text-sm font-medium text-slate-600">Acordo 2025</td>
+                                <td class="px-4 py-3 whitespace-nowrap text-sm text-slate-600 text-right">€70,760</td>
+                                <td class="px-4 py-3 whitespace-nowrap text-sm text-slate-600 text-right">€48,500</td>
+                                <td class="px-4 py-3 whitespace-nowrap text-sm text-slate-400 text-right">N/A</td>
+                                <td class="px-4 py-3 whitespace-nowrap text-sm font-bold text-slate-700 text-right">€119,260</td>
+                                <td class="px-4 py-3 whitespace-nowrap text-sm text-slate-400 text-right">N/A</td>
+                            </tr>
+                            <tr>
+                                <td class="px-4 py-3 whitespace-nowrap text-sm font-medium text-red-600">Proposta 2026</td>
+                                <td class="px-4 py-3 whitespace-nowrap text-sm text-red-600 text-right">€75,000</td>
+                                <td class="px-4 py-3 whitespace-nowrap text-sm text-red-600 text-right">€39,000</td>
+                                <td class="px-4 py-3 whitespace-nowrap text-sm text-red-600 text-right">€28,700</td>
+                                <td class="px-4 py-3 whitespace-nowrap text-sm font-bold text-red-700 text-right">€114,000</td>
+                                <td class="px-4 py-3 whitespace-nowrap text-sm font-bold text-red-700 text-right">€142,700</td>
+                            </tr>
+                            <tr>
+                                <td class="px-4 py-3 whitespace-nowrap text-sm font-medium text-green-700">Alvo Recomendado</td>
+                                <td class="px-4 py-3 whitespace-nowrap text-sm text-green-700 text-right">€55,000</td>
+                                <td class="px-4 py-3 whitespace-nowrap text-sm text-green-700 text-right">€30,000</td>
+                                <td class="px-4 py-3 whitespace-nowrap text-sm text-green-700 text-right">€28,700</td>
+                                <td class="px-4 py-3 whitespace-nowrap text-sm font-bold text-green-800 text-right">€85,000</td>
+                                <td class="px-4 py-3 whitespace-nowrap text-sm font-bold text-green-800 text-right">€113,700</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </section>
+
+        <section id="negociacao" class="mb-12 scroll-mt-24">
+            <h2 class="text-3xl font-bold text-slate-800 mb-4 border-b-2 border-slate-300 pb-2">4. Pontos de Negociação</h2>
+            <p class="text-lg text-slate-700 mb-6">Aqui estão os nossos argumentos de negociação e objetivos-alvo para cada evento. Use-os como o seu guião para a chamada.</p>
+            <div class="space-y-6">
+                
+                <div class="bg-white p-6 rounded-lg shadow-lg border border-slate-200">
+                    <h3 class="text-2xl font-bold text-slate-800 mb-3">Ponto 1: Negociação SBC Americas</h3>
+                    <p class="text-lg font-semibold text-slate-700 mb-6">Target: Reduzir de €75k para <span class="text-green-700">€55k-€60k</span></p>
+                    <div class="space-y-5">
+                        <div class="flex items-start gap-4">
+                            <i class="fas fa-bullseye text-blue-600 mt-1.5 w-5 text-center flex-shrink-0"></i>
+                            <div>
+                                <strong class="text-slate-800">Ação Principal:</strong>
+                                <span class="text-slate-700">Rejeitar o item <strong class="text-blue-600">"Gold Headline Sponsor" (€23,5k)</strong>.</span>
+                            </div>
+                        </div>
+                        <div class="flex items-start gap-4">
+                            <i class="fas fa-comment-dots text-slate-500 mt-1.5 w-5 text-center flex-shrink-0"></i>
+                            <div>
+                                <strong class="text-slate-600">Argumento:</strong>
+                                <span class="text-slate-700 italic">"O nosso patrocínio de dois palcos principais (North America e Affiliate Leaders) já *é* um patrocínio de nível 'headline'. Este item 'Gold' é redundante e inflaciona o pacote."</span>
+                            </div>
+                        </div>
+                        <div class="flex items-start gap-4">
+                            <i class="fas fa-bullseye text-blue-600 mt-1.5 w-5 text-center flex-shrink-0"></i>
+                            <div>
+                                <strong class="text-slate-800">Ação Secundária:</strong>
+                                <span class="text-slate-700">Reverter a taxa de <strong class="text-red-600">"Speaker Panel" (€5,8k)</strong> para cortesia.</span>
+                            </div>
+                        </div>
+                        <div class="flex items-start gap-4">
+                            <i class="fas fa-comment-dots text-slate-500 mt-1.5 w-5 text-center flex-shrink-0"></i>
+                            <div>
+                                <strong class="text-slate-600">Argumento:</strong>
+                                <span class="text-slate-700 italic">"Sempre foi uma cortesia associada ao nosso patrocínio de palco. É um 'standard' da nossa parceria. Não vamos pagar por uma oportunidade de palestra."</span>
+                            </div>
+                        </div>
+                        <div class="flex items-start gap-4">
+                            <i class="fas fa-check-double text-slate-700 mt-1.5 w-5 text-center flex-shrink-0"></i>
+                            <div>
+                                <strong class="text-slate-800">Conclusão:</strong>
+                                <span class="text-slate-700 font-semibold">"O nosso investimento 'não-booth' em 2025 foi de €49k. Um aumento para €75k pelos mesmos palcos (+50%) é injustificável."</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="bg-white p-6 rounded-lg shadow-lg border border-slate-200">
+                    <h3 class="text-2xl font-bold text-slate-800 mb-3">Ponto 2: Negociação SBC Rio</h3>
+                    <p class="text-lg font-semibold text-slate-700 mb-6">Target: Reduzir de €39k para <span class="text-green-700">€25k-€30k</span></p>
+                    <div class="space-y-5">
+                        <div class="flex items-start gap-4">
+                            <i class="fas fa-bullseye text-blue-600 mt-1.5 w-5 text-center flex-shrink-0"></i>
+                            <div>
+                                <strong class="text-slate-800">Ação Principal:</strong>
+                                <span class="text-slate-700">Questionar o prémio de €18,5k pelo <strong class="text-blue-600">"Main Stage"</strong>.</span>
+                            </div>
+                        </div>
+                        <div class="flex items-start gap-4">
+                            <i class="fas fa-comment-dots text-slate-500 mt-1.5 w-5 text-center flex-shrink-0"></i>
+                            <div>
+                                <strong class="text-slate-600">Argumento:</strong>
+                                <span class="text-slate-700 italic">"Reconhecemos a maior visibilidade do 'Main Stage', mas o dobro do preço do 'Affiliate Stage' (2025) não é razoável. Um aumento para €25-30k seria um reflexo mais justo."</span>
+                            </div>
+                        </div>
+                        <div class="flex items-start gap-4">
+                            <i class="fas fa-bullseye text-blue-600 mt-1.5 w-5 text-center flex-shrink-0"></i>
+                            <div>
+                                <strong class="text-slate-800">Ação Secundária:</strong>
+                                <span class="text-slate-700">Repor os <strong class="text-red-600">Passes (de 8 para 15)</strong>.</span>
+                            </div>
+                        </div>
+                        <div class="flex items-start gap-4">
+                            <i class="fas fa-comment-dots text-slate-500 mt-1.5 w-5 text-center flex-shrink-0"></i>
+                            <div>
+                                <strong class="text-slate-600">Argumento:</strong>
+                                <span class="text-slate-700 italic">"Precisamos de manter os 15 passes de 2025 para a nossa equipa e convidados. A redução para 8 não é viável."</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="bg-white p-6 rounded-lg shadow-lg border border-slate-200">
+                    <h3 class="text-2xl font-bold text-slate-800 mb-3">Ponto 3: Negociação SBC Malta</h3>
+                    <p class="text-lg font-semibold text-slate-700 mb-6">Target: Confirmar <span class="text-green-700">€28,7k</span> e pedir 'extra'</p>
+                    <div class="space-y-5">
+                        <div class="flex items-start gap-4">
+                            <i class="fas fa-bullseye text-blue-600 mt-1.5 w-5 text-center flex-shrink-0"></i>
+                            <div>
+                                <strong class="text-slate-800">Ação:</strong>
+                                <span class="text-slate-700">Aceitar a Opção 2 (€28,7k) por ser a mais equilibrada.</span>
+                            </div>
+                        </div>
+                        <div class="flex items-start gap-4">
+                            <i class="fas fa-comment-dots text-slate-500 mt-1.5 w-5 text-center flex-shrink-0"></i>
+                            <div>
+                                <strong class="text-slate-600">Argumento:</strong>
+                                <span class="text-slate-700 italic">"Ao fechar um pacote de 3 eventos, esperamos um desconto adicional de 'pacote' ou, no mínimo, a inclusão de alguns 'extras' de branding em Malta sem custo adicional."</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="fontes" class="mb-12 scroll-mt-24">
+            <h2 class="text-3xl font-bold text-slate-800 mb-4 border-b-2 border-slate-300 pb-2">5. Fontes</h2>
+             <div class="bg-white p-6 rounded-lg shadow-lg border border-slate-200">
+                <ul class="list-disc pl-5 space-y-3 text-slate-700">
+                    <li>
+                        <strong>Rio e Americas 2025.pdf</strong> (Agreement 2025)
+                        <a href="https://drive.google.com/file/d/1UbFDmR-Kc9AJH4kkrbCx9nCYaDrf-Rid/view?usp=drive_link" target="_blank" rel="noopener noreferrer" class="ml-2 text-blue-600 hover:underline">[link]</a>
+                    </li>
+                    <li>
+                        <strong>SBC Events 2026 Partnership with Clever Advertising.pdf</strong> (Proposal 2026)
+                        <a href="https://drive.google.com/file/d/1Yxl9heyzwiH574TZjgZ2KI0rHYvA9khh/view?usp=sharing" target="_blank" rel="noopener noreferrer" class="ml-2 text-blue-600 hover:underline">[link]</a>
+                    </li>
+                </ul>
+            </div>
+        </section>
+        
+    </main>
+
+    <footer class="bg-slate-800 text-slate-300 text-center p-6 mt-12">
+        <p class="text-sm">&copy; 2025 Clever Advertising | All Rights Reserved</p>
+    </footer>
+    
+    <script>
+        let americasChart, rioChart, financeiroChart;
+
+        function getChartColors() {
+            return {
+                '2025_booth': 'rgba(148, 163, 184, 0.6)',
+                '2025_nonbooth': 'rgba(51, 65, 85, 0.7)',
+                '2026_proposta': 'rgba(220, 38, 38, 0.7)',
+                '2026_alvo': 'rgba(22, 163, 74, 0.7)',
+                '2025_total': 'rgba(51, 65, 85, 1)',
+            };
+        }
+
+        function getChartOptions() {
+            const gridColor = 'rgba(0, 0, 0, 0.05)';
+            const tickColor = '#475569';
+            
+            const formatLabel = (str) => {
+                if (!str || str.length <= 16) return str;
+                const words = str.split(' ');
+                let lines = [];
+                let currentLine = '';
+                for (const word of words) {
+                    if ((currentLine + word).length <= 16) {
+                        currentLine += word + ' ';
+                    } else {
+                        lines.push(currentLine.trim());
+                        currentLine = word + ' ';
+                    }
+                }
+                lines.push(currentLine.trim());
+                return lines;
+            };
+
+            const tooltipFormat = (context) => {
+                let label = context.dataset.label || '';
+                if (label) label += ': ';
+                if (context.parsed.y !== null) {
+                    label += new Intl.NumberFormat('de-DE', { style: 'currency', currency: 'EUR', minimumFractionDigits: 0 }).format(context.parsed.y);
+                }
+                return label;
+            };
+
+            return {
+                responsive: true,
+                maintainAspectRatio: false,
+                plugins: {
+                    legend: {
+                        position: 'top',
+                        labels: {
+                            color: tickColor,
+                            font: {
+                                family: "'Barlow', sans-serif",
+                                weight: '700'
+                            }
+                        }
+                    },
+                    tooltip: {
+                        callbacks: {
+                            label: tooltipFormat
+                        },
+                        titleFont: { family: "'Barlow', sans-serif" },
+                        bodyFont: { family: "'Figtree', sans-serif" }
+                    },
+                    title: {
+                        display: true,
+                        color: tickColor,
+                        font: {
+                            family: "'Barlow', sans-serif",
+                            size: 16,
+                            weight: '700'
+                        }
+                    }
+                },
+                scales: {
+                    y: {
+                        beginAtZero: true,
+                        grid: {
+                            color: gridColor
+                        },
+                        ticks: {
+                            color: tickColor,
+                            font: { family: "'Figtree', sans-serif" },
+                            callback: function(value) {
+                                return '€' + new Intl.NumberFormat('de-DE').format(value);
+                            }
+                        }
+                    },
+                    x: {
+                        grid: {
+                            display: false
+                        },
+                        ticks: {
+                            color: tickColor,
+                            font: { family: "'Figtree', sans-serif" },
+                            callback: function(value) {
+                                return formatLabel(this.getLabelForValue(value));
+                            }
+                        }
+                    }
+                }
+            };
+        }
+
+        function renderCharts() {
+            const chartColors = getChartColors();
+            
+            if (americasChart) americasChart.destroy();
+            if (rioChart) rioChart.destroy();
+            if (financeiroChart) financeiroChart.destroy();
+
+            const americasCtx = document.getElementById('americasChart').getContext('2d');
+            let americasOptions = getChartOptions();
+            americasOptions.plugins.title.text = 'Americas: Custo 2025 (c/ Booth) vs 2026 (s/ Booth)';
+            americasChart = new Chart(americasCtx, {
+                type: 'bar',
+                data: {
+                    labels: ['2025', '2026'],
+                    datasets: [
+                        { label: 'Booth 2025', data: [21975, 0], backgroundColor: chartColors['2025_booth'], stack: '2025' },
+                        { label: 'Non-Booth 2025', data: [48785, 0], backgroundColor: chartColors['2025_nonbooth'], stack: '2025' },
+                        { label: 'Proposta Non-Booth 2026', data: [0, 75000], backgroundColor: chartColors['2026_proposta'], stack: '2026' },
+                        { label: 'Alvo Non-Booth 2026', data: [0, 57500], backgroundColor: chartColors['2026_alvo'], stack: '2026' }
+                    ]
+                },
+                options: americasOptions
+            });
+
+            const rioCtx = document.getElementById('rioChart').getContext('2d');
+            let rioOptions = getChartOptions();
+            rioOptions.plugins.title.text = 'Rio: Custo 2025 (c/ Booth) vs 2026 (s/ Booth)';
+            rioChart = new Chart(rioCtx, {
+                type: 'bar',
+                data: {
+                    labels: ['2025', '2026'],
+                    datasets: [
+                        { label: 'Booth 2025', data: [28079, 0], backgroundColor: chartColors['2025_booth'], stack: '2025' },
+                        { label: 'Non-Booth 2025', data: [20421, 0], backgroundColor: chartColors['2025_nonbooth'], stack: '2025' },
+                        { label: 'Proposta Non-Booth 2026', data: [0, 39000], backgroundColor: chartColors['2026_proposta'], stack: '2026' },
+                        { label: 'Alvo Non-Booth 2026', data: [0, 27500], backgroundColor: chartColors['2026_alvo'], stack: '2026' }
+                    ]
+                },
+                options: rioOptions
+            });
+
+            const financeiroCtx = document.getElementById('financeiroChart').getContext('2d');
+            let financeiroOptions = getChartOptions();
+            financeiroOptions.plugins.title.text = 'Comparativo Financeiro: 2025 vs 2026 Proposta vs 2026 Alvo';
+            financeiroChart = new Chart(financeiroCtx, {
+                type: 'bar',
+                data: {
+                    labels: ['Americas', 'Rio', 'Malta', 'TOTAL (Rio+Americas)', 'TOTAL (3 Eventos)'],
+                    datasets: [
+                        { label: 'Acordo 2025', data: [70760, 48500, null, 119260, null], backgroundColor: chartColors['2025_total'], borderWidth: 1 },
+                        { label: 'Proposta 2026', data: [75000, 39000, 28700, 114000, 142700], backgroundColor: chartColors['2026_proposta'], borderWidth: 1 },
+                        { label: 'Alvo Recomendado', data: [55000, 30000, 28700, 85000, 113700], backgroundColor: chartColors['2026_alvo'], borderWidth: 1 }
+                    ]
+                },
+                options: financeiroOptions
+            });
+        }
+        
+        document.addEventListener('DOMContentLoaded', () => {
+            
+            renderCharts();
+            
+            const tabButtons = document.querySelectorAll('.tab-button');
+            const tabContents = document.querySelectorAll('.tab-content');
+            tabButtons.forEach(button => {
+                button.addEventListener('click', () => {
+                    const tabId = button.dataset.tab;
+
+                    tabButtons.forEach(btn => btn.classList.remove('active'));
+                    button.classList.add('active');
+
+                    tabContents.forEach(content => {
+                        content.id === `tab-${tabId}` ? content.classList.remove('hidden') : content.classList.add('hidden');
+                    });
+                });
+            });
+            
+        });
+    </script>
+</body>
+</html>
+
+
